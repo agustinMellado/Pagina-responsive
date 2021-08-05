@@ -1,0 +1,612 @@
+/* aplicar un modelo de diseño de caja natural a todos los elementos, pero permitiendo que los componentes cambiene */
+html {
+    box-sizing: border-box;
+    }
+/*el primer anterisco se lo aplica a todos los elemento del html, es universal.
+- before y after son seudoelementos(no existen en hmtl solo en css) que el caso de usar 
+un box-sizing para que no le afecte aplicarle un padding 
+en caso que modifique su tamanio*/
+/* -----------------------PARTE GENERAL--------------------------------*/
+ *, *:before, *:after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background: rgb(241,241,241);
+    background: radial-gradient(circle, rgba(241,241,241,1) 0%, rgba(24,23,23,1) 100%);
+}
+.sombra{
+    box-shadow: 9px 4px 34px -2px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 9px 4px 34px -2px rgba(0,0,0,0.5);
+    -moz-box-shadow: 9px 4px 34px -2px rgba(0,0,0,0.5);
+}  
+/*------ contenedor de todas las etiquetas---------*/
+.contenedor{
+    width: 100%;
+    margin:auto;
+    overflow:hidden;
+}
+/* parte del navegador */
+.navegador{
+    text-align: center;
+    padding: 20px 10px;
+    height: 100px;
+    background-color: black;
+    
+}
+nav{
+    display: flex;
+    /*inicio de derecha a izquierda */
+    justify-content: flex-end;
+}
+a{
+
+    height: 40px; 
+    width: 150px;
+    font-size: 20px;
+    padding: 7px;
+    margin-right: 10px;
+    text-decoration: none;
+    border-radius: 20px;
+    border: solid 2px white;
+    
+
+}
+.boton-sesion {
+
+    color: black;
+    background-color: white;
+}
+.boton-registro{
+    color: white;
+
+}
+.boton-sesion:hover{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+.boton-registro:hover{
+    color:black;
+    background-color: white;
+    
+}
+.boton-inicio{
+    
+    font-family: 'Press Start 2P', cursive;
+    font-size:  20px;
+    color: white;
+    border: none;
+    margin-right: auto;
+    
+}
+.boton-inicio:hover{
+    background-color: white;
+    color: black;
+    height: 70px;
+}
+/* fin parte navegador*/
+
+/*parte portada*/
+.portada{
+    
+    
+    width: 100%;
+    height: 350px;
+    font-size: 60px;
+    margin-bottom: auto;
+    background-image: url(../img/shahadat-rahman-BfrQnKBulYQ-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    background-color: rgb(100,100,100);
+    background-blend-mode: soft-light;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;   
+    color: white;
+    text-align: center;
+}
+
+/*fin parte portada*/
+
+/*parte principal*/
+.principal{
+    width: 100%;
+    height: 600px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+    padding: 10px;
+}
+
+
+.principal article{
+    width: 50%;
+    height: 350px;
+    
+    
+    
+    margin: auto;
+    
+    color: white;
+    
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+   
+    border-radius: 10px;
+    border: solid 2px black;
+}
+article p{
+
+    font-size: 20px;
+    
+    margin-top: 100px;
+    
+}
+
+.articulo1{
+background-image: url(/img/joshua-aragon-EaB4Ml7C7fE-unsplash.jpg);
+background-size:cover;
+background-repeat: no-repeat;
+}
+.articulo2{
+background-image: url(/img/tudor-baciu-vc3iVL_znJ8-unsplash.jpg);
+background-size: cover;
+
+background-repeat: no-repeat;
+
+}
+
+.boton-art{
+    text-align: center;
+    margin-left: auto;
+    color: black;
+    background-color:whitesmoke;
+    text-transform: uppercase;
+
+
+    
+}
+.boton-art:hover{
+    background-color: rgb(246, 246, 164);
+    font-size: 22px;
+
+}
+/*fin parte principal*/
+
+/*pie de pagina*/
+footer{
+    color:white;
+    text-align: center;
+}
+/*fin pie de pagina/*
+/*----------------------------------------*/
+
+/* parte de los html de articulo 1 y 2*/
+.principal-art1, .principal-art2{
+    background-color: white;
+    width: 80%;
+    height: 500px;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding: 20px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    
+
+
+}
+.principal-art1{
+    background-image: url(/img/joshua-aragon-EaB4Ml7C7fE-unsplash.jpg);
+  
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.principal-art2{
+    background-image: url(/img/tudor-baciu-vc3iVL_znJ8-unsplash.jpg); 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.titulo-art1, .titulo-art2{
+    margin-top: 10px;
+    color: white;
+}
+.principal-art1 p, .principal-art2 p{
+    margin-top: 100px;
+    color: white;
+    font-size: 20px;
+
+}
+.boton-art1, .boton-art2{
+    margin-top: 100px;
+    color: black;
+    background-color: whitesmoke;
+    text-align: center;
+    text-transform: uppercase;
+}
+/* fin parte articulo 1 y 2*/
+/*----------------------------------------------*/
+/* formulario usuario y registro*/
+.contenedor-form{
+    margin: 100%;
+    height: 600px;
+    margin: auto;
+    
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.formulario-usuario{
+    width: 300px;
+    height: 300px;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    border: solid 2px black;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+.contenido-usuario{
+    
+    margin-top: 10px;
+    width: 200px;
+    margin: auto;
+}
+.form-control{
+    
+    width: 100%;
+    color: black;
+    border-radius: 20px;
+    margin-bottom: 16px;
+    border: 2px solid rgb(255, 252, 252);
+    font-size: 18px;
+    background-color:white;
+}
+.form-text{
+    font-size: 15px;
+}
+.formulario-registro{
+    width: 300px;
+    height: 400px;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    border: solid 2px black;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.boton{
+    
+    width: 100px;
+    height: 30px;
+    margin: auto;
+    border-radius: 10px;
+    font-size: 15px;
+    padding: 8px;
+    text-transform: uppercase;
+    text-decoration: none;
+    
+    color:black;
+    background-color: whitesmoke;
+}
+.boton:hover{
+    background-color: rgb(199, 193, 193);
+}
+/*fin paginas de formularios */
+
+
+
+@media screen and (min-width:480px ) and (max-width:780px) {
+   /*pagina principal*/
+    nav{
+        /*le doy un ancho */
+        width: 100%;
+        /*lo establesco como bloque */
+        display: flex;
+        /*inicio de izq a der */
+        flex-direction: row;
+        justify-content: center;
+        
+    }
+    nav a {
+        /*defino largo*/
+        height: 40px; 
+        /*defino ancho*/
+        width: 100%;
+        /*tamaño de fuente*/
+        font-size: 20px;
+        /*defino espacio de relleno*/
+        padding: 7px;
+        /*elimino subrayado*/
+        text-decoration: none;
+        /*defino redondeo de borde*/
+        border-radius: 20px;
+        /*margen y color de borde*/
+        border: solid 2px white;
+        /*distancia del top*/
+        margin-top: 10px;
+    }
+    /*parte de articulos*/
+    .principal article {
+        /*defino ancho*/
+        width: 80%;
+        /*defino largo*/
+        height: 500px;
+        
+        
+        /*color de fuente*/
+        color: white;
+        /*espacio de relleno*/
+        padding: 30px;
+        /*margen centrado*/
+        margin: auto;
+        /*borde */
+        border-radius: 10px;
+    }
+    
+    .articulo1 , .articulo2{
+        /*estableco como un bloque flex*/
+        display: flex;   
+        /*los hago columna*/
+        flex-direction: column;
+        /*centro */
+        justify-content: center;
+        
+
+    }
+    .articulo1{
+        /*paso imagen por url*/
+        background-image: url(/img/joshua-aragon-EaB4Ml7C7fE-unsplash.jpg);
+        /*hago que tome todo el tamaño existente*/
+        background-size: cover;
+        /*que no se repita la imagen*/
+        background-repeat: no-repeat;
+        
+    }
+    .articulo2{
+        
+        /*paso imagen por url*/
+        background-image: url(/img/tudor-baciu-vc3iVL_znJ8-unsplash.jpg);
+        /*hago que tome todo el tamaño existente*/
+        background-size: cover;
+        /*que no se repita la imagen*/
+        background-repeat: no-repeat;
+    
+    }
+    
+    footer{
+        /*distancia margen del top*/
+        margin-top: 100px;
+    }
+    /*pagina de articulos 1 y 2*/
+    .principal-art1{
+        /*ancho */
+        width: 80%;
+    }
+    .boton-art1, .boton-art2{
+        /*distancia margen del top*/
+        margin-top: auto;
+        /*color de fuente*/
+        color: black;
+        /*color de fondo*/
+        background-color: whitesmoke;
+        /*centro el texto*/
+        text-align: center;
+        /*transformo en mayuscula*/
+        text-transform: uppercase;
+    }
+
+}
+
+
+@media screen and (max-width:480px) {
+    /*pagina principal*/
+    .navegador{
+        /*defino largo*/
+        height: 300px;
+        /*color de fondo*/
+        background-color: black;
+        /*lo establesco como bloque flexible*/
+        display: flex;
+        /*centro los elementos*/
+        justify-content: center;
+        
+        
+    }
+    nav{
+        /*establesco como bloque flex*/
+        display: flex;
+        /*hago columnas y las centro*/
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+    a{
+        /*defino el largo*/
+        height: 40px; 
+        /*defino ancho*/
+        width: 100%;
+        /*tamaño de fuente*/
+        font-size: 20px;
+        /*relleno de espacio interno*/
+        padding: 7px;
+        /*le saco el subrayado*/
+        text-decoration: none;
+        /*borde de esquinas*/
+        border-radius: 20px;
+    
+        border: solid 2px white;
+        /*espacio del margen top*/
+        margin-top: 10px;
+        
+    
+    }
+
+    .portada{
+        /*defino ancho*/
+        width: 100%;
+        /*defino largo*/
+        height: 350px;
+        /*tamaño de fuente*/
+        font-size: 60px;
+        /*espacio del margen bottom*/
+        margin-bottom: 100px;
+        /*paso imagen por url*/
+        background-image: url(../img/shahadat-rahman-BfrQnKBulYQ-unsplash.jpg);
+        /*hago que ocupe todo el espacio disponible*/
+        background-size: cover;
+        /*centro la posicion*/
+        background-position: center;
+        /*hago que no se repita la imagen*/
+        background-repeat: no-repeat;
+        /*color de fondo*/
+        background-color: rgb(100,100,100);
+        /*describo la imagen como fondo*/
+        background-blend-mode: soft-light;
+        /*establesco co0mo bloque flex*/
+        display: flex;
+        /*hago columnas*/
+        flex-direction: column; 
+        /*centro columnas*/
+        justify-content: center;  
+        /*color de fuente*/
+        color: white;
+        /*centro texto*/
+        text-align: center;
+    }
+    .principal{
+        /*defino ancho*/
+        width: 100%;
+        /*defino largo*/
+        height: 400px;
+        /*espacio del margen top*/
+        margin-top: 80px;
+        /*establesco como bloque flex*/
+        display: flex;
+        /* hago columnas */
+        flex-direction: column;
+        /*centro las columnas*/
+        justify-content: center;
+      
+    }
+
+    .principal article{
+        /*defino ancho*/
+        width: 100%;
+        /*defino largo*/
+        height: 350px;
+        /*color de fuente*/
+        color: white;
+        /*espacio de relleno*/
+        padding: 30px;
+        /*espacio de los margenes*/
+        margin: auto;
+        /*defino bloque flex*/
+        display: flex;
+        /*hago columnas*/
+        flex-direction: column;
+        /*centro columnas*/
+        justify-content: center;
+        /*hago bordes*/
+        border-radius: 10px;
+    }
+    article p{
+        /*defino tamaño fuente*/
+        font-size: 20px;
+        /*distancia del margen top*/
+        margin-top:auto;
+        
+    }
+    .articulo1 , .articulo2{
+        /*establesco bloque flex*/
+        display: flex;
+        /*hago columnas*/
+        flex-direction: column;
+        /*centro columnas*/
+        justify-content: center;
+        
+
+    }
+    .articulo1{
+        /*coloco imagen */
+        background-image: url(/img/joshua-aragon-EaB4Ml7C7fE-unsplash.jpg);
+        /*hago que use todo el espacio disponible*/
+        background-size: cover;
+        /*no se repita la imagen*/
+        background-repeat: no-repeat;
+
+    }
+    .articulo2{
+        /*coloco imagaen*/
+        background-image: url(/img/tudor-baciu-vc3iVL_znJ8-unsplash.jpg);
+        /*hago que use todo el espacio disponible*/
+        background-size: cover;
+        /*no se repita la imagen*/
+        background-repeat: no-repeat;
+    
+    }
+    footer{
+        /*distancia del margen top*/
+        margin-top: 100px;
+    }
+    /*articulo 1 y 2*/
+    .principal-art1, .principal-art2{
+        /*color de fondo*/
+        background-color: white;
+        /*ancho*/
+        width: 100%;
+        /*largo*/
+        height: 500px;
+        /*margen*/
+        margin: 0;
+        
+        
+        /*establesco bloque flex*/
+        display: flex;
+        /*hago columnas*/
+        flex-direction: column;
+        /*centro columnas*/
+        justify-content: center;
+
+    
+    }
+    .principal-art1 p, .principal-art2 p{
+        /*espacio de los margenes*/
+        margin: auto;
+    }
+    /**-----------------------------------**/
+    /*formulario usuario y registro*/
+    .formulario-usuario, .formulario-registro{
+        /*defino el ancho*/
+        width: 100%;
+    }
+
+
+}
+
